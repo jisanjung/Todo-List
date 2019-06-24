@@ -17,9 +17,10 @@ function addToList() {// add
     
     listContainer.appendChild(listItem);// add the li into ul
     clearInput();
-}
-function removeFromList() {// remove
     
+    listItem.addEventListener("click", function() {// removing the list element
+        listContainer.removeChild(listItem);
+    });
 }
 function clearInput() {// clears the input box
     input.value = "";
