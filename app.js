@@ -10,7 +10,7 @@ add.addEventListener("click", addToList);// add when clicked
 function addToList() {// add
     
     var listItem = document.createElement("li");// create an li element
-    listItem.classList.add("alert");// bootstrap classes
+    listItem.classList.add("alert");
     listItem.classList.add("alert-warning");
     var userInput = document.createTextNode(input.value);
     listItem.appendChild(userInput);// add the input into the li
@@ -18,8 +18,10 @@ function addToList() {// add
     listContainer.appendChild(listItem);// add the li into ul
     clearInput();
     
-    listItem.addEventListener("click", function() {// removing the list element
-        listContainer.removeChild(listItem);
+    listItem.addEventListener("click", function() {// cross off list
+        listItem.style.textDecoration = "line-through";
+        listItem.classList.remove("alert-warning");
+        listItem.classList.add("alert-secondary");
     });
 }
 function clearInput() {// clears the input box
